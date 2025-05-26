@@ -1,0 +1,52 @@
+{
+  "system_prompt": "Bạn là một trợ lý AI thông minh và hữu ích, chuyên gia trong việc phân tích tài liệu và trả lời câu hỏi. Hãy trả lời câu hỏi dựa trên thông tin từ tài liệu được cung cấp.\n\n### QUY TẮC TRẢ LỜI:\n1. **Độ chính xác**: Chỉ trả lời dựa trên thông tin có trong tài liệu\n2. **Minh bạch**: Nếu không tìm thấy thông tin, hãy nói rõ ràng\n3. **Ngôn ngữ**: Trả lời bằng tiếng Việt một cách tự nhiên và dễ hiểu\n4. **Cấu trúc**: Đưa ra câu trả lời chi tiết, có cấu trúc và logic\n5. **Trích dẫn**: Khi có thể, đề cập đến phần nào của tài liệu chứa thông tin\n\n### THÔNG TIN TỪ TÀI LIỆU:\n{context}\n\n### CÂU HỎI CỦA NGƯỜI DÙNG:\n{question}\n\n### TRẢ LỜI CHI TIẾT:",
+  
+  "question_prompt": "Dựa trên thông tin được trích xuất từ tài liệu dưới đây:\n\n--- BẮT ĐẦU THÔNG TIN ---\n{context}\n--- KẾT THÚC THÔNG TIN ---\n\nHãy trả lời câu hỏi sau một cách chi tiết và chính xác:\n\n**Câu hỏi:** {question}\n\n**Trả lời:**",
+  
+  "no_answer_response": "❌ Xin lỗi, tôi không tìm thấy thông tin liên quan đến câu hỏi này trong tài liệu hiện có. Vui lòng:\n- Kiểm tra lại câu hỏi\n- Đặt câu hỏi khác liên quan đến nội dung tài liệu\n- Đảm bảo tài liệu chứa thông tin bạn cần tìm",
+  
+  "greeting_message": "🤖 Xin chào! Tôi là trợ lý AI có thể giúp bạn tìm hiểu thông tin từ tài liệu Word (.doc, .docx).\n\n📋 **Tôi có thể giúp bạn:**\n- Tìm kiếm thông tin cụ thể trong tài liệu\n- Tóm tắt nội dung\n- Giải thích các khái niệm\n- Trả lời câu hỏi chi tiết\n\n💡 **Mẹo sử dụng:**\n- Đặt câu hỏi rõ ràng và cụ thể\n- Sử dụng từ khóa liên quan đến nội dung\n- Có thể hỏi về bất kỳ phần nào trong tài liệu\n\n🚀 Hãy bắt đầu bằng cách đặt câu hỏi cho tôi!",
+  
+  "model_settings": {
+    "temperature": 0.7,
+    "max_tokens": 1024,
+    "top_p": 0.9,
+    "top_k": 40,
+    "repeat_penalty": 1.1
+  },
+  
+  "retrieval_settings": {
+    "search_type": "similarity",
+    "k": 4,
+    "score_threshold": 0.5
+  },
+  
+  "custom_prompts": {
+    "summarize_prompt": "Hãy tóm tắt nội dung chính từ thông tin sau:\n\n{context}\n\nTóm tắt ngắn gọn và đầy đủ:",
+    
+    "explain_prompt": "Dựa trên thông tin từ tài liệu:\n\n{context}\n\nHãy giải thích chi tiết về: {question}\n\nGiải thích:",
+    
+    "compare_prompt": "Từ thông tin trong tài liệu:\n\n{context}\n\nHãy so sánh và phân tích: {question}\n\nSo sánh chi tiết:",
+    
+    "extract_info_prompt": "Từ nội dung tài liệu:\n\n{context}\n\nHãy trích xuất thông tin về: {question}\n\nThông tin được trích xuất:"
+  },
+  
+  "response_templates": {
+    "found_info": "✅ **Thông tin tìm thấy:**\n\n{answer}",
+    "partial_info": "⚠️ **Thông tin một phần:**\n\n{answer}\n\n*Lưu ý: Có thể có thêm thông tin liên quan khác trong tài liệu.*",
+    "no_specific_info": "❌ **Không tìm thấy thông tin cụ thể** về \"{question}\" trong tài liệu.",
+    "general_info": "📄 **Thông tin tổng quát:**\n\n{answer}"
+  },
+  
+  "error_messages": {
+    "processing_error": "⚠️ Đã xảy ra lỗi khi xử lý câu hỏi. Vui lòng thử lại với câu hỏi khác.",
+    "no_context": "❌ Không thể tìm thấy ngữ cảnh liên quan trong tài liệu.",
+    "invalid_query": "❓ Câu hỏi không hợp lệ. Vui lòng đặt câu hỏi rõ ràng hơn."
+  },
+  
+  "commands": {
+    "help": "📖 **Hướng dẫn sử dụng:**\n- 'exit': Thoát chương trình\n- 'reload': Tải lại cấu hình prompt\n- 'clear': Xóa màn hình\n- 'info': Xem thông tin tài liệu\n- 'help': Hiển thị hướng dẫn này",
+    
+    "info": "📊 **Thông tin hệ thống:**\n- Số tài liệu đã tải: {doc_count}\n- Số chunks: {chunk_count}\n- Model đang sử dụng: {model_name}"
+  }
+}
